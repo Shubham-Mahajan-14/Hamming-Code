@@ -1,50 +1,69 @@
-Hamming Code Using Verilog
+# Hamming Code Using Verilog  
 
-This project implements Hamming Code in Verilog, covering encoding, decoding, and error correction for reliable digital communication. It demonstrates how single-bit errors in transmitted data can be detected and corrected using error-correcting codes.
+This project implements **Hamming Code** in Verilog, including encoding, decoding, and error correction. It demonstrates how single-bit errors can be detected and corrected in digital communication systems.  
 
+---
 
-Features
+##  Features  
+- **Hamming Code Encoder** – generates a 7-bit Hamming Code from 4-bit data.  
+- **Hamming Code Decoder** – retrieves the original 4-bit data and raises an error flag if corruption is detected.  
+- **Error Correction Module** – corrects single-bit errors in the received Hamming Code.  
+- **Parity Type Selection** – supports **even** (`parity_type = 0`) and **odd** (`parity_type = 1`) parity.  
+- **Complete Testbenches** – each module is tested using dedicated testbench files.  
 
-Hamming Code Generator/Encoder - takes 4 data bits and produces a 7-bit Hamming Code with parity bits.
+---
 
-Hamming Code Decoder - decodes the 7-bit Hamming Code and retrieves the original 4-bit data.
+##  Hamming Code Representation  
 
-Error Correction Module - detects and corrects single-bit errors in the 7-bit Hamming Code.
+The 7-bit Hamming Code format:  
 
-Configurable Parity Type - supports odd and even parity (parity_type = 1 → Odd, parity_type = 0 → Even).
+| Code Bit | H7 | H6 | H5 | H4 | H3 | H2 | H1 |  
+|----------|----|----|----|----|----|----|----|  
+| Position | D4 | D3 | D2 | P3 | D1 | P2 | P1 |  
 
-Testbenches Included - all modules are verified using dedicated testbenches.
+- **D** → Data bit  
+- **P** → Parity bit  
 
-Hamming Code Representation
+---
 
-The 7-bit Hamming Code layout is as follows:
+##  Project Structure  
 
-Code Bit	H7	H6	H5	H4	H3	H2	H1
-Position	D4	D3	D2	P3	D1	P2	P1
+### Design Files  
+- `hamming_code_encoder.v` – Hamming Code Encoder  
+- `hamming_code_decoder.v` – Hamming Code Decoder  
+- `hamming_error_correction.v` – Error Correction Module  
 
-D → Data bits
+### Testbench Files  
+- `hamming_encode_tb.v` – Testbench for Encoder  
+- `hamming_decode_tb.v` – Testbench for Decoder  
+- `hamming_error_correction_tb.v` – Testbench for Error Correction  
 
-P → Parity bits
+---
 
+## ⚙ Module Details  
 
+###  Encoder  
+- **Input:** 4-bit data  
+- **Output:** 7-bit Hamming Code (with parity bits)  
 
+###  Decoder  
+- **Input:** 7-bit Hamming Code  
+- **Output:** 4-bit corrected data + error flag  
 
-Project Structure
+###  Error Correction  
+- **Input:** 7-bit Hamming Code (possibly erroneous)  
+- **Output:** Corrected 7-bit Hamming Code + error flag  
 
-Design Files
+---
 
-hamming_code_encoder.v - Hamming Code Generator/Encoder
+##  How to Run  
 
-hamming_code_decoder.v - Hamming Code Decoder
+1. Open a Verilog simulator (ModelSim, Vivado, etc.).  
+2. Compile all design files and the testbench files.  
+3. Run each testbench (`*_tb.v`).  
+4. Verify that the outputs match the expected behavior.  
 
-hamming_error_correction.v - Error Correction module
+---
 
-Testbench Files
-
-hamming_encode_tb.v - Encoder Testbench
-
-hamming_decode_tb.v - Decoder Testbench
-
-hamming_error_correction_tb.v - Error Correction Testbench
 
 
