@@ -5,11 +5,11 @@ This project implements **Hamming Code** in Verilog, including encoding, decodin
 ---
 
 ##  Features  
-- **Hamming Code Encoder** – generates a 7-bit Hamming Code from 4-bit data.  
-- **Hamming Code Decoder** – retrieves the original 4-bit data and raises an error flag if corruption is detected.  
-- **Error Correction Module** – corrects single-bit errors in the received Hamming Code.  
-- **Parity Type Selection** – supports **even** (`parity_type = 0`) and **odd** (`parity_type = 1`) parity.  
-- **Complete Testbenches** – each module is tested using dedicated testbench files.  
+- **Hamming Code Encoder** - generates a 7-bit Hamming Code from 4-bit data.  
+- **Hamming Code Decoder** - retrieves the original 4-bit data and raises an error flag if corruption is detected.  
+- **Error Correction Module** - corrects single-bit errors in the received Hamming Code.  
+- **Parity Type Selection** - supports **even** (`parity_type = 0`) and **odd** (`parity_type = 1`) parity.  
+- **Complete Testbenches** - each module is tested using dedicated testbench files.  
 
 ---
 
@@ -29,18 +29,18 @@ The 7-bit Hamming Code format:
 ##  Project Structure  
 
 ### Design Files  
-- `hamming_code_encoder.v` – Hamming Code Encoder  
-- `hamming_code_decoder.v` – Hamming Code Decoder  
-- `hamming_error_correction.v` – Error Correction Module  
+- `hamming_code_encoder.v` - Hamming Code Encoder  
+- `hamming_code_decoder.v` - Hamming Code Decoder  
+- `hamming_error_correction.v` - Error Correction Module  
 
 ### Testbench Files  
-- `hamming_encode_tb.v` – Testbench for Encoder  
-- `hamming_decode_tb.v` – Testbench for Decoder  
-- `hamming_error_correction_tb.v` – Testbench for Error Correction  
+- `hamming_encode_tb.v` - Testbench for Encoder  
+- `hamming_decode_tb.v` - Testbench for Decoder  
+- `hamming_error_correction_tb.v` - Testbench for Error Correction  
 
 ---
 
-## ⚙ Module Details  
+##  Module Details  
 
 ###  Encoder  
 - **Input:** 4-bit data  
@@ -56,14 +56,6 @@ The 7-bit Hamming Code format:
 
 ---
 
-##  How to Run  
-
-1. Open a Verilog simulator (ModelSim, Vivado, etc.).  
-2. Compile all design files and the testbench files.  
-3. Run each testbench (`*_tb.v`).  
-4. Verify that the outputs match the expected behavior.  
-
----
 
 
 
